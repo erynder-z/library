@@ -1,6 +1,6 @@
 const myLibrary = [];
-const testBook = new Book("Moby Dick", "Hermann Melivlle", 808, "already red");
-const testBook2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not red yet");
+const book1 = new Book("Moby Dick", "Hermann Melivlle", 808, "already red");
+const book2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not red yet");
 
 let newTitle;
 let newAuthor;
@@ -15,6 +15,17 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+function displayLibary() {
+    myLibrary.push(book1);
+    myLibrary.push(book2);
+    const para = document.createElement("P");
+    para.innerText = "";
+    for (let i = 0; i < myLibrary.length; i++) {
+        para.innerText = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
+        document.body.appendChild(para.cloneNode(true)); //cloneNode copies the element before it appends the child so it wont just be overwritten
+    }
+}
+
 //Get input field values and pushed them to myLibary-Array.
 function addBookToLibary() {
 
@@ -26,12 +37,12 @@ function addBookToLibary() {
     let newBook = new Book(newTitle, newAuthor, newPages, newRead);
 
     myLibrary.push(newBook);
-    displayLibary();
+    updateLibary();
     clearInput();
 }
 
 //Displays book in myLibary-Array.
-function displayLibary() {
+function updateLibary() {
     const para = document.createElement("P");
     para.innerText = "";
     for (let i = 0; i < myLibrary.length; i++) {
@@ -47,3 +58,6 @@ function clearInput() {
     document.getElementById("pagesInput").value = "";
     document.getElementById("readCheck").value = "";
 }
+
+displayLibary();
+
