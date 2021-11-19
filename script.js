@@ -7,6 +7,8 @@ let newAuthor;
 let newPages;
 let newRead;
 
+const para = document.createElement("P");
+
 //Constructor function that makes "Book" objects.
 function Book(title, author, pages, read) {
     this.title = title;
@@ -18,7 +20,6 @@ function Book(title, author, pages, read) {
 function displayLibary() {
     myLibrary.push(book1);
     myLibrary.push(book2);
-    const para = document.createElement("P");
     para.innerText = "";
     for (let i = 0; i < myLibrary.length; i++) {
         para.innerText = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
@@ -43,7 +44,6 @@ function addBookToLibary() {
 
 //Displays book in myLibary-Array.
 function updateLibary() {
-    const para = document.createElement("P");
     para.innerText = "";
     for (let i = 0; i < myLibrary.length; i++) {
         para.innerText = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
