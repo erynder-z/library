@@ -35,7 +35,8 @@ function displayLibrary() {
         nBook.appendChild(nAuthor);
         nBook.appendChild(nPages);
         nBook.appendChild(nRead);
-}}
+    }
+}
 /* function displayLibary() {
     myLibrary.push(book1);
     myLibrary.push(book2);
