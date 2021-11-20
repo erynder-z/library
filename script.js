@@ -7,11 +7,6 @@ let newAuthor;
 let newPages;
 let newRead;
 
-const libTitle = document.createElement("P");
-const libAuthor = document.createElement("P");
-const libPages = document.createElement("P");
-const libRead = document.createElement("P");
-
 //Constructor function that makes "Book" objects.
 function Book(title, author, pages, read) {
     this.title = title;
@@ -20,7 +15,26 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function displayLibary() {
+//Displays Objects stored in libary.
+function displayLibrary() {
+    const bookShelf = document.getElementById("shelf");
+    let nTitle = document.createElement("div");
+    let nAuthor = document.createElement("div");
+    let nPages = document.createElement("div");
+    let nRead = document.createElement("div");
+
+    for (let i = 0; i < myLibrary.length; i++) {
+        nTitle.textContent = myLibrary[i].title;
+        nAuthor.innerText = myLibrary[i].author;
+        nPages.innerText = myLibrary[i].pages;
+        nRead.innerText = myLibrary[i].read;
+
+        bookShelf.appendChild(nTitle);
+        bookShelf.appendChild(nAuthor);
+        bookShelf.appendChild(nPages);
+        bookShelf.appendChild(nRead);
+}}
+/* function displayLibary() {
     myLibrary.push(book1);
     myLibrary.push(book2);
     libTitle.innerText = "";
@@ -32,12 +46,12 @@ function displayLibary() {
         libAuthor.innerText = myLibrary[i].author;
         libPages.innerText = myLibrary[i].pages;
         libRead.innerText = myLibrary[i].read;
-        document.body.appendChild(libTitle.cloneNode(true));
-        document.body.appendChild(libAuthor.cloneNode(true));
-        document.body.appendChild(libPages.cloneNode(true));
-        document.body.appendChild(libRead.cloneNode(true)); //cloneNode copies the element before it appends the child so it wont just be overwritten
+        bookShelf.appendChild(libTitle.cloneNode(true));
+        bookShelf.appendChild(libAuthor.cloneNode(true));
+        bookShelf.appendChild(libPages.cloneNode(true));
+        bookShelf.appendChild(libRead.cloneNode(true)); //cloneNode copies the element before it appends the child so it wont just be overwritten
     }
-}
+} */
 
 //Get input field values and pushed them to myLibary-Array.
 function addBookToLibary() {
@@ -56,10 +70,8 @@ function addBookToLibary() {
 
 //Displays book in myLibary-Array.
 function updateLibary() {
-    para.innerText = "";
     for (let i = 0; i < myLibrary.length; i++) {
-        para.innerText = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
-        document.body.appendChild(para);
+     displayLibrary();
     }
 }
 
@@ -71,5 +83,4 @@ function clearInput() {
     document.getElementById("readCheck").value = "";
 }
 
-displayLibary();
 

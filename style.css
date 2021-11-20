@@ -3,7 +3,3 @@
 *::after {
     box-sizing: border-box;
 }
-
-#shelf {
-    display: flex;
-}
