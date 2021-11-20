@@ -3,3 +3,7 @@
 *::after {
     box-sizing: border-box;
 }
+
+.book {
+    border: solid 2px black;
+}
