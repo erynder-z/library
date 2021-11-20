@@ -1,6 +1,4 @@
 const myLibrary = [];
-const book1 = new Book("Moby Dick", "Hermann Melivlle", 808, "already red");
-const book2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not red yet");
 
 let newTitle;
 let newAuthor;
@@ -8,11 +6,11 @@ let newPages;
 let newRead;
 
 //Constructor function that makes "Book" objects.
-function Book(title, author, pages, read) {
+function Book(title, author, pages, red) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.red = red;
 }
 
 //Displays Objects stored in libary.
@@ -33,7 +31,7 @@ function displayLibrary() {
         nTitle.textContent = myLibrary[i].title;
         nAuthor.textContent = myLibrary[i].author;
         nPages.textContent = myLibrary[i].pages;
-        nRead.textContent = myLibrary[i].read;
+        nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);
         nBook.appendChild(nTitle);
@@ -42,24 +40,6 @@ function displayLibrary() {
         nBook.appendChild(nRead);
     }
 }
-/* function displayLibary() {
-    myLibrary.push(book1);
-    myLibrary.push(book2);
-    libTitle.innerText = "";
-    libAuthor.innerText = "";
-    libPages.innerText = "";
-    libRead.innerText = "";
-    for (let i = 0; i < myLibrary.length; i++) {
-        libTitle.innerText = myLibrary[i].title;
-        libAuthor.innerText = myLibrary[i].author;
-        libPages.innerText = myLibrary[i].pages;
-        libRead.innerText = myLibrary[i].read;
-        bookShelf.appendChild(libTitle.cloneNode(true));
-        bookShelf.appendChild(libAuthor.cloneNode(true));
-        bookShelf.appendChild(libPages.cloneNode(true));
-        bookShelf.appendChild(libRead.cloneNode(true)); //cloneNode copies the element before it appends the child so it wont just be overwritten
-    }
-} */
 
 //Get input field values and pushed them to myLibary-Array.
 function addBookToLibary() {
@@ -67,9 +47,10 @@ function addBookToLibary() {
     newTitle = document.getElementById("titleInput").value;
     newAuthor = document.getElementById("authorInput").value;
     newPages = document.getElementById("pagesInput").value;
-    newRead = document.getElementById("readCheck").value;
+    checkRead();
+    
 
-    let newBook = new Book(newTitle, newAuthor, newPages, newRead);
+    let newBook = new Book(newTitle, newAuthor, newPages, red);
 
     myLibrary.push(newBook);
     displayLibrary();
@@ -82,6 +63,15 @@ function clearInput() {
     document.getElementById("authorInput").value = "";
     document.getElementById("pagesInput").value = "";
     document.getElementById("readCheck").value = "";
+}
+
+//Check if entered book is already red or not.
+function checkRead() {
+    if(document.getElementById("readCheck").checked === true) {
+        return red = true;
+    }else {
+        return red = false;
+    }
 }
 
 
