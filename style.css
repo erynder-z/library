@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+.newBookButton {
+    background: tomato;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin: 25px 0;
+    cursor: pointer;
+}
+
 .book {
     border: solid 2px black;
+}
+
+.hidden {
+    display: none;
 }
