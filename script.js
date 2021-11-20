@@ -84,3 +84,9 @@ const getNewBookButton = document.getElementById("newBookButton");
 getNewBookButton.addEventListener("click", () => {
     showInputs();
 });
+
+//Shows input fields for new book
+function showInputs() {
+    document.getElementById("inputFields").classList.remove("hidden");
+}
+
