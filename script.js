@@ -18,6 +18,7 @@ function Book(title, author, pages, read) {
 //Displays Objects stored in libary.
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
+    let nBook = document.createElement("div");
     let nTitle = document.createElement("div");
     let nAuthor = document.createElement("div");
     let nPages = document.createElement("div");
@@ -29,10 +30,11 @@ function displayLibrary() {
         nPages.innerText = myLibrary[i].pages;
         nRead.innerText = myLibrary[i].read;
 
-        bookShelf.appendChild(nTitle);
-        bookShelf.appendChild(nAuthor);
-        bookShelf.appendChild(nPages);
-        bookShelf.appendChild(nRead);
+        bookShelf.appendChild(nBook);
+        nBook.appendChild(nTitle);
+        nBook.appendChild(nAuthor);
+        nBook.appendChild(nPages);
+        nBook.appendChild(nRead);
 }}
 /* function displayLibary() {
     myLibrary.push(book1);
@@ -64,15 +66,8 @@ function addBookToLibary() {
     let newBook = new Book(newTitle, newAuthor, newPages, newRead);
 
     myLibrary.push(newBook);
-    updateLibary();
+    displayLibrary();
     clearInput();
-}
-
-//Displays book in myLibary-Array.
-function updateLibary() {
-    for (let i = 0; i < myLibrary.length; i++) {
-     displayLibrary();
-    }
 }
 
 //Clear input fields after input.
