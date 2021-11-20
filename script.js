@@ -68,6 +68,7 @@ function clearInput() {
     document.getElementById("authorInput").value = "";
     document.getElementById("pagesInput").value = "";
     document.getElementById("readCheck").value = "";
+    hideInputs();
 }
 
 //Check if entered book is already red or not.
@@ -90,3 +91,7 @@ function showInputs() {
     document.getElementById("inputFields").classList.remove("hidden");
 }
 
+//Hides input fields for new book
+function hideInputs() {
+    document.getElementById("inputFields").classList.add("hidden");
+}
