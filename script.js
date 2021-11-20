@@ -17,15 +17,15 @@ function Book(title, author, pages, red) {
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
     let nBook = document.createElement("div");
-        nBook.classList.add("book");
+    nBook.classList.add("book");
     let nTitle = document.createElement("div");
-        nTitle.classList.add("title");
+    nTitle.classList.add("title");
     let nAuthor = document.createElement("div");
-        nAuthor.classList.add("author");
+    nAuthor.classList.add("author");
     let nPages = document.createElement("div");
     nPages.classList.add("pages");
     let nRead = document.createElement("div");
-        nRead.classList.add("read")
+    nRead.classList.add("read")
 
     for (let i = 0; i < myLibrary.length; i++) {
         nTitle.textContent = myLibrary[i].title;
@@ -48,7 +48,7 @@ function addBookToLibary() {
     newAuthor = document.getElementById("authorInput").value;
     newPages = document.getElementById("pagesInput").value;
     checkRead();
-    
+
 
     let newBook = new Book(newTitle, newAuthor, newPages, red);
 
@@ -67,11 +67,9 @@ function clearInput() {
 
 //Check if entered book is already red or not.
 function checkRead() {
-    if(document.getElementById("readCheck").checked === true) {
+    if (document.getElementById("readCheck").checked === true) {
         return red = true;
-    }else {
+    } else {
         return red = false;
     }
 }
-
-
