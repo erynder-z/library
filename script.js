@@ -19,16 +19,21 @@ function Book(title, author, pages, read) {
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
     let nBook = document.createElement("div");
+        nBook.classList.add("book");
     let nTitle = document.createElement("div");
+        nTitle.classList.add("title");
     let nAuthor = document.createElement("div");
+        nAuthor.classList.add("author");
     let nPages = document.createElement("div");
+    nPages.classList.add("pages");
     let nRead = document.createElement("div");
+        nRead.classList.add("read")
 
     for (let i = 0; i < myLibrary.length; i++) {
         nTitle.textContent = myLibrary[i].title;
-        nAuthor.innerText = myLibrary[i].author;
-        nPages.innerText = myLibrary[i].pages;
-        nRead.innerText = myLibrary[i].read;
+        nAuthor.textContent = myLibrary[i].author;
+        nPages.textContent = myLibrary[i].pages;
+        nRead.textContent = myLibrary[i].read;
 
         bookShelf.appendChild(nBook);
         nBook.appendChild(nTitle);
