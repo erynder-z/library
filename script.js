@@ -1,4 +1,5 @@
 const myLibrary = [];
+let bookCount = 0;
 
 let newTitle;
 let newAuthor;
@@ -16,6 +17,8 @@ function Book(title, author, pages, red) {
 //Displays Objects stored in libary.
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
+    let nIndex = document.createElement("div");
+    nIndex.classList.add("index");
     let nBook = document.createElement("div");
     nBook.classList.add("book");
     let nTitle = document.createElement("div");
@@ -28,12 +31,14 @@ function displayLibrary() {
     nRead.classList.add("read")
 
     for (let i = 0; i < myLibrary.length; i++) {
+        nIndex.textContent = bookCount;
         nTitle.textContent = myLibrary[i].title;
         nAuthor.textContent = myLibrary[i].author;
         nPages.textContent = myLibrary[i].pages;
         nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);
+        nBook.appendChild(nIndex);
         nBook.appendChild(nTitle);
         nBook.appendChild(nAuthor);
         nBook.appendChild(nPages);
@@ -53,6 +58,7 @@ function addBookToLibary() {
     let newBook = new Book(newTitle, newAuthor, newPages, red);
 
     myLibrary.push(newBook);
+    bookCount++;
     displayLibrary();
     clearInput();
 }
