@@ -7,7 +7,10 @@ let newAuthor;
 let newPages;
 let newRead;
 
-const para = document.createElement("P");
+const libTitle = document.createElement("P");
+const libAuthor = document.createElement("P");
+const libPages = document.createElement("P");
+const libRead = document.createElement("P");
 
 //Constructor function that makes "Book" objects.
 function Book(title, author, pages, read) {
@@ -20,10 +23,19 @@ function Book(title, author, pages, read) {
 function displayLibary() {
     myLibrary.push(book1);
     myLibrary.push(book2);
-    para.innerText = "";
+    libTitle.innerText = "";
+    libAuthor.innerText = "";
+    libPages.innerText = "";
+    libRead.innerText = "";
     for (let i = 0; i < myLibrary.length; i++) {
-        para.innerText = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
-        document.body.appendChild(para.cloneNode(true)); //cloneNode copies the element before it appends the child so it wont just be overwritten
+        libTitle.innerText = myLibrary[i].title;
+        libAuthor.innerText = myLibrary[i].author;
+        libPages.innerText = myLibrary[i].pages;
+        libRead.innerText = myLibrary[i].read;
+        document.body.appendChild(libTitle.cloneNode(true));
+        document.body.appendChild(libAuthor.cloneNode(true));
+        document.body.appendChild(libPages.cloneNode(true));
+        document.body.appendChild(libRead.cloneNode(true)); //cloneNode copies the element before it appends the child so it wont just be overwritten
     }
 }
 
