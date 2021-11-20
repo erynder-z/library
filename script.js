@@ -46,14 +46,13 @@ function displayLibrary() {
     }
 }
 
-//Get input field values and pushed them to myLibary-Array.
+//Get input field values and push them to myLibary-Array.
 function addBookToLibary() {
 
     newTitle = document.getElementById("titleInput").value;
     newAuthor = document.getElementById("authorInput").value;
     newPages = document.getElementById("pagesInput").value;
     checkRead();
-
 
     let newBook = new Book(newTitle, newAuthor, newPages, red);
 
@@ -79,3 +78,9 @@ function checkRead() {
         return red = false;
     }
 }
+
+//Add new book button
+const getNewBookButton = document.getElementById("newBookButton");
+getNewBookButton.addEventListener("click", () => {
+    showInputs();
+});
