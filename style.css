@@ -11,7 +11,8 @@ body {
 
 header {
     background: rgb(140, 175, 175);
-    padding: 20px 0;
+    padding: 10px 0;
+    height: 25vh;
 }
 
 header>h1 {
@@ -108,9 +109,27 @@ header>h1 {
     font-size: 20px;
 }
 
+#shelf {
+    display: flex;
+    flex-wrap: wrap;
+    background: teal;
+    min-height: 70vh;
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    gap: 50px;
+}
+
 
 .book {
     border: solid 2px black;
+    height: fit-content;
+    width: 35vw;
+}
+
+footer {
+    background: rgb(0, 92, 92);
+    height: 5vh;
 }
 
 .hidden {
