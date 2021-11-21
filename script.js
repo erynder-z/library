@@ -16,6 +16,8 @@ function Book(title, author, pages, red) {
 //Displays Objects stored in libary.
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
+    let nClose = document.createElement("div");
+    nClose.classList.add("close");
     let nIndex = document.createElement("div");
     nIndex.classList.add("index");
     let nBook = document.createElement("div");
@@ -30,6 +32,7 @@ function displayLibrary() {
     nRead.classList.add("read")
 
     for (let i = 0; i < myLibrary.length; i++) {
+        nClose.textContent = "X";
         nIndex.textContent = myLibrary.indexOf(myLibrary[i]) + 1;
         nTitle.textContent = myLibrary[i].title;
         nAuthor.textContent = myLibrary[i].author;
@@ -37,6 +40,7 @@ function displayLibrary() {
         nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);
+        nBook.appendChild(nClose);
         nBook.appendChild(nIndex);
         nBook.appendChild(nTitle);
         nBook.appendChild(nAuthor);
