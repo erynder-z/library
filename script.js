@@ -1,5 +1,4 @@
 const myLibrary = [];
-let bookCount = 0;
 
 let newTitle;
 let newAuthor;
@@ -31,7 +30,7 @@ function displayLibrary() {
     nRead.classList.add("read")
 
     for (let i = 0; i < myLibrary.length; i++) {
-        nIndex.textContent = bookCount;
+        nIndex.textContent = myLibrary.indexOf(myLibrary[i]) + 1;
         nTitle.textContent = myLibrary[i].title;
         nAuthor.textContent = myLibrary[i].author;
         nPages.textContent = myLibrary[i].pages;
