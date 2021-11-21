@@ -56,7 +56,6 @@ function addBookToLibary() {
     let newBook = new Book(newTitle, newAuthor, newPages, red);
 
     myLibrary.push(newBook);
-    bookCount++;
     displayLibrary();
     clearInput();
 }
