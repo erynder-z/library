@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
 #newBookButton {
     background: tomato;
     width: 100px;
@@ -15,6 +20,68 @@
     margin: 25px 0;
     cursor: pointer;
 }
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    background: teal;
+    height: 50vh;
+    width: 60vw;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 50em) {
+    .inputContainer {
+        width: 95vw;
+    }
+}
+
+
+.inputUpperContainer {
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+}
+
+.inputUpperContainer>input {
+    width: 100%;
+    height: 5vh;
+    margin: 10px 0;
+    display: flex;
+}
+
+.inputLowerContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.inputLowerContainer>button {
+    width: 15vw;
+    height: 5vh;
+    display: flex;
+    font-size: 26px;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+#readCheck {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#readCheckLabel {
+    font-size: 20px;
+}
+
 
 .book {
     border: solid 2px black;

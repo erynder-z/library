@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,28 @@
     <script src="script.js" defer></script>
     <title>Libary</title>
 </head>
+
 <body>
     <header>
         <h1>Library</h1>
         <div id="newBookButton">+</div>
     </header>
-        <div id="inputFields" class="inputContainer hidden">
+    <div id="inputFields" class="inputContainer hidden">
+        <div class="inputUpperContainer">
+            <h2>Add a new book</h2>
             <input type="text" id="titleInput" placeholder="Title">
             <input type="text" id="authorInput" placeholder="Author">
             <input type="text" id="pagesInput" placeholder="Pages">
-            <input type="checkbox" id="readCheck" name="read" unchecked>
-            <label for="readCheck">finished?</label>
+        </div>
+        <div class="inputLowerContainer">
+            <div class="checkboxContainer">
+                <input type="checkbox" id="readCheck" name="read" unchecked>
+                <label id="readCheckLabel" for="read">finished?</label>
+            </div>
             <button onclick="addBookToLibary()" class="addBtn">Add</button>
         </div>
-       <div id="shelf"></div>
+    </div>
+    <div id="shelf"></div>
 </body>
+
 </html>
