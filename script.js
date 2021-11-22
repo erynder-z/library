@@ -6,7 +6,7 @@ let newPages;
 let newRead;
 
 //Constructor function that makes "Book" objects.
-function Book(title, author, pages, red) {
+function Book(title, author, pages, red, index) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -18,6 +18,7 @@ function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
     let nClose = document.createElement("div");
     nClose.classList.add("close");
+    nClose.setAttribute("id", "delBook");
     let nIndex = document.createElement("div");
     nIndex.classList.add("index");
     let nBook = document.createElement("div");
@@ -40,6 +41,7 @@ function displayLibrary() {
         nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);
+        nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i]));
         nBook.appendChild(nClose);
         nBook.appendChild(nIndex);
         nBook.appendChild(nTitle);
@@ -47,6 +49,10 @@ function displayLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(nRead);
     }
+    //Remove book button
+    const removeBtn = document.getElementById("delBook");
+    removeBtn.addEventListener("click", () => {
+    });
 }
 
 //Get input field values and push them to myLibary-Array.
