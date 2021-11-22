@@ -18,7 +18,7 @@ function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
     let nClose = document.createElement("div");
     nClose.classList.add("close");
-    nClose.setAttribute("id", "delBook");
+    /* nClose.classList.add("delBook"); */
     let nIndex = document.createElement("div");
     nIndex.classList.add("index");
     let nBook = document.createElement("div");
@@ -49,10 +49,6 @@ function displayLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(nRead);
     }
-    //Remove book button
-    const removeBtn = document.getElementById("delBook");
-    removeBtn.addEventListener("click", () => {
-    });
 }
 
 //Get input field values and push them to myLibary-Array.
@@ -68,6 +64,7 @@ function addBookToLibary() {
     myLibrary.push(newBook);
     displayLibrary();
     clearInput();
+    makeRemoveButton();
 }
 
 //Clear input fields after input.
@@ -102,4 +99,14 @@ function showInputs() {
 //Hides input fields for new book
 function hideInputs() {
     document.getElementById("inputFields").classList.add("hidden");
+}
+
+//Generte a remove book button on each created book DOM object
+function makeRemoveButton() {
+let elements = document.querySelectorAll(".close");
+elements.forEach(item => {
+    item.addEventListener("click", event => {
+        console.log(event.target.parentNode.id);
+    });
+});
 }
