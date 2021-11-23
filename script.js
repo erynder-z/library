@@ -6,7 +6,7 @@ let newPages;
 let newRead;
 
 //Constructor function that makes "Book" objects.
-function Book(title, author, pages, red, index) {
+function Book(title, author, pages, red) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -18,7 +18,6 @@ function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
     let nClose = document.createElement("div");
     nClose.classList.add("close");
-    /* nClose.classList.add("delBook"); */
     let nIndex = document.createElement("div");
     nIndex.classList.add("index");
     let nBook = document.createElement("div");
@@ -64,7 +63,7 @@ function addBookToLibary() {
     myLibrary.push(newBook);
     displayLibrary();
     clearInput();
-    makeRemoveButton();
+    activateRemoveButton();
 }
 
 //Clear input fields after input.
@@ -102,11 +101,10 @@ function hideInputs() {
 }
 
 //Generte a remove book button on each created book DOM object
-function makeRemoveButton() {
-let elements = document.querySelectorAll(".close");
-elements.forEach(item => {
-    item.addEventListener("click", event => {
-        console.log(event.target.parentNode.id);
+function activateRemoveButton() {
+    document.querySelectorAll(".close").forEach(item => {
+        item.addEventListener("click", event => {
+            document.getElementById(event.target.parentNode.id).remove();
+        });
     });
-});
 }
