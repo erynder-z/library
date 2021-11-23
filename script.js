@@ -48,6 +48,7 @@ function displayLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(nRead);
     }
+    activateRemoveButton();
 }
 
 //Get input field values and push them to myLibary-Array.
@@ -63,7 +64,6 @@ function addBookToLibary() {
     myLibrary.push(newBook);
     displayLibrary();
     clearInput();
-    activateRemoveButton();
 }
 
 //Clear input fields after input.
@@ -104,7 +104,13 @@ function hideInputs() {
 function activateRemoveButton() {
     document.querySelectorAll(".close").forEach(item => {
         item.addEventListener("click", event => {
-            document.getElementById(event.target.parentNode.id).remove();
+            removeBook(event.target.parentNode.id);
         });
     });
+}
+
+function removeBook(parentNodeID) {
+    document.getElementById(parentNodeID).remove();
+    myLibrary.splice(parentNodeID, 1);
+    return myLibrary;
 }
