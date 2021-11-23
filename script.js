@@ -80,7 +80,6 @@ function addBookToLibary() {
     myLibrary.push(newBook);
     displayLibrary();
     clearInput();
-
 }
 
 //Clear input fields after input.
@@ -89,7 +88,7 @@ function clearInput() {
     document.getElementById("authorInput").value = "";
     document.getElementById("pagesInput").value = "";
     document.getElementById("readCheck").value = "";
-    checkrst = document.getElementById("readCheck").checked = false;
+    document.getElementById("readCheck").checked = false;
     hideInputs();
 }
 
