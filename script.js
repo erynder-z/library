@@ -34,7 +34,8 @@ function displayLibrary() {
     nPages.classList.add("pages");
     let mRead = document.createElement("div");
     mRead.classList.add("readhead")
-    let nRead = document.createElement("div");
+    let nRead = document.createElement("input");
+    nRead.setAttribute("type", "checkbox");
     nRead.classList.add("read")
 
     for (let i = 0; i < myLibrary.length; i++) {
@@ -45,7 +46,7 @@ function displayLibrary() {
         nAuthor.textContent = myLibrary[i].author;
         mPages.textContent = "Pages:";
         nPages.textContent = myLibrary[i].pages;
-        mRead.textContent = "finished?"
+        mRead.textContent = "finished?";
         nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);
@@ -59,6 +60,9 @@ function displayLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(mRead);
         nBook.appendChild(nRead);
+        if (this.red === true) {
+            nRead.setAttribute("checked", "true");
+        }
     }
     activateRemoveButton();
 }
