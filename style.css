@@ -12,7 +12,7 @@ body {
 header {
     background: rgb(140, 175, 175);
     padding: 10px 0;
-    height: 25vh;
+
 }
 
 header>h1 {
@@ -31,6 +31,13 @@ header>h1 {
     cursor: pointer;
 }
 
+@media (max-width: 50em) {
+    #newBookButton {
+        width: 75px;
+        height: 75px;
+    }
+}
+
 .inputContainer {
     display: flex;
     flex-direction: column;
@@ -42,9 +49,10 @@ header>h1 {
     margin: 0 auto;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 33%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
+    border: solid 2px black;
 }
 
 @media (max-width: 50em) {
@@ -120,10 +128,27 @@ header>h1 {
     gap: 50px;
 }
 
+@media (max-width: 50em) {
+    #shelf {
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+    }
+}
+
 .book {
     border: solid 2px black;
     height: fit-content;
-    width: 35vw;
+    min-height: 33vh;
+    min-width: 20vw;
+    background: rgb(230, 216, 216);
+}
+
+@media (max-width: 50em) {
+    .book {
+        width: 80vw;
+        min-height: 50vh;
+    }
 }
 
 .close {
