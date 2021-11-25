@@ -13,6 +13,14 @@ function Book(title, author, pages, red) {
     this.red = red;
 }
 
+Book.prototype.toggleReadStatus = function () {
+    if (this.red === true) {
+        this.red = false;
+        return this.red;
+    }
+    return this.red = true;
+}
+
 //Displays Objects stored in libary.
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
@@ -36,7 +44,7 @@ function displayLibrary() {
     mRead.classList.add("readhead")
     let nRead = document.createElement("input");
     nRead.setAttribute("type", "checkbox");
-    nRead.classList.add("read")
+    nRead.classList.add("read");
 
     for (let i = 0; i < myLibrary.length; i++) {
         nClose.textContent = "X";
@@ -65,6 +73,7 @@ function displayLibrary() {
         }
     }
     activateRemoveButton();
+    activateReadToggle();
 }
 
 //Get input field values and push them to myLibary-Array.
@@ -130,5 +139,18 @@ function activateRemoveButton() {
 function removeBook(parentNodeID) {
     document.getElementById(parentNodeID).remove();
     myLibrary.splice(parentNodeID, 1);
+    return myLibrary;
+}
+
+//change the books' read status
+function activateReadToggle() {
+    document.querySelectorAll(".read").forEach(item => {
+        item.addEventListener("click", event => {
+            toggleRead(event.target.parentNode.id);
+        });
+    });
+}
+function toggleRead(parentNodeID) {
+    myLibrary[parentNodeID].toggleReadStatus();
     return myLibrary;
 }
