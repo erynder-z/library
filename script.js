@@ -58,7 +58,7 @@ function displayLibrary() {
         nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);
-        nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i]));
+        nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i])); // use this ID to grab the object in the array and to operations on it
         nBook.appendChild(nClose);
         nBook.appendChild(mTitle);
         nBook.appendChild(nTitle);
@@ -130,7 +130,7 @@ function hideInputs() {
 function activateRemoveButton() {
     document.querySelectorAll(".close").forEach(item => {
         item.addEventListener("click", event => {
-            removeBook(event.target.parentNode.id);
+            removeBook(event.target.parentNode.id); // ID of the corresponding Book object. Use this ID to target the corresponding object in the myLibrary-Array
         });
     });
 }
@@ -150,6 +150,7 @@ function activateReadToggle() {
         });
     });
 }
+
 function toggleRead(parentNodeID) {
     myLibrary[parentNodeID].toggleReadStatus();
     return myLibrary;
