@@ -129,10 +129,12 @@ function hideInputs() {
 //Generte a remove book button on each created book DOM object
 function activateRemoveButton() {
     document.querySelectorAll(".close").forEach(item => {
-        item.addEventListener("click", event => {
-            removeBook(event.target.parentNode.id); // ID of the corresponding Book object. Use this ID to target the corresponding object in the myLibrary-Array
+        item.addEventListener("click", removeBookHelper)// ID of the corresponding Book object. Use this ID to target the corresponding object in the myLibrary-Array
         });
-    });
+}
+
+function removeBookHelper(item) {
+    removeBook(item.target.parentNode.id);
 }
 
 //removes Book from myLibrary Array
@@ -154,3 +156,4 @@ function readStatusHelper(event) {
     myLibrary[event.target.parentNode.id].toggleReadStatus();
     return myLibrary;
 }
+
