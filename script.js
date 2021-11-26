@@ -73,7 +73,7 @@ function displayLibrary() {
         }
     }
     activateRemoveButton();
-    activateReadToggle();
+    readToggleListener();
 }
 
 //Get input field values and push them to myLibary-Array.
@@ -143,15 +143,13 @@ function removeBook(parentNodeID) {
 }
 
 //change the books' read status
-function activateReadToggle() {
+function readToggleListener() {
     document.querySelectorAll(".read").forEach(item => {
-        item.addEventListener("click", event => {
-            toggleRead(event.target.parentNode.id);
-        });
+        item.addEventListener("click", readStatusHelper)
     });
-}
+} 
 
-function toggleRead(parentNodeID) {
-    myLibrary[parentNodeID].toggleReadStatus();
+function readStatusHelper(event) {
+    myLibrary[event.target.parentNode.id].toggleReadStatus();
     return myLibrary;
 }
