@@ -142,13 +142,14 @@ function removeBook(parentNodeID) {
     return myLibrary;
 }
 
-//change the books' read status
+//attach Event Listere on all .read-checkboxes
 function readToggleListener() {
     document.querySelectorAll(".read").forEach(item => {
         item.addEventListener("click", readStatusHelper)
     });
 } 
 
+//run prototype function on selected object
 function readStatusHelper(event) {
     myLibrary[event.target.parentNode.id].toggleReadStatus();
     return myLibrary;
