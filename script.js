@@ -128,8 +128,8 @@ function hideInputs() {
 
 //Generte a remove book button on each created book DOM object
 function activateRemoveButton() {
-    document.querySelectorAll(".close").forEach(item => {
-        item.addEventListener("click", removeBookHelper)// ID of the corresponding Book object. Use this ID to target the corresponding object in the myLibrary-Array
+    document.querySelectorAll(".close").forEach(button => {
+        button.addEventListener("click", removeBookHelper)// ID of the corresponding Book object. Use this ID to target the corresponding object in the myLibrary-Array
         });
 }
 
@@ -146,14 +146,14 @@ function removeBook(parentNodeID) {
 
 //attach Event Listere on all .read-checkboxes
 function readToggleListener() {
-    document.querySelectorAll(".read").forEach(item => {
-        item.addEventListener("click", readStatusHelper)
+    document.querySelectorAll(".read").forEach(checkbox => {
+        checkbox.addEventListener("click", readStatusHelper)
     });
 } 
 
 //run prototype function on selected object
-function readStatusHelper(event) {
-    myLibrary[event.target.parentNode.id].toggleReadStatus();
+function readStatusHelper(item) {
+    myLibrary[item.target.parentNode.id].toggleReadStatus();
     return myLibrary;
 }
 
