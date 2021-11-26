@@ -54,7 +54,7 @@ function displayLibrary() {
         nAuthor.textContent = myLibrary[i].author;
         mPages.textContent = "Pages:";
         nPages.textContent = myLibrary[i].pages;
-        mRead.textContent = "finished?";
+        mRead.textContent = "Finished";
         nRead.textContent = myLibrary[i].red;
 
         bookShelf.appendChild(nBook);

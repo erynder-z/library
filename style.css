@@ -121,7 +121,7 @@ header>h1 {
     display: flex;
     flex-wrap: wrap;
     background: teal;
-    min-height: 70vh;
+    min-height: 71vh;
     width: 100%;
     padding: 20px;
     justify-content: center;
@@ -164,6 +164,21 @@ header>h1 {
     cursor: pointer;
 }
 
+.titlehead, .authorhead, .pageshead, .readhead {
+font-size: 18px;
+font-weight: bold;
+padding: 20px 10px 0 10px;
+}
+
+.title, .author, .pages {
+    font-size: 24px;
+    padding: 0 10px;
+    }
+
+.read {
+   margin: 0 20px 40px 10px;
+}
+
 footer {
     background: rgb(0, 92, 92);
     height: 5vh;
@@ -171,4 +186,8 @@ footer {
 
 .hidden {
     display: none;
+}
+
+input[type="checkbox" i] {
+    cursor: pointer;
 }
