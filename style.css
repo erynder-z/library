@@ -188,6 +188,14 @@ footer {
     display: none;
 }
 
+.markRead {
+    background:url("markread.png");
+    background-repeat: no-repeat;
+    background-position: bottom 1em right;
+    background-size: 5em;
+    background-color: rgb(230, 216, 216);
+}
+
 input[type="checkbox" i] {
     cursor: pointer;
 }
