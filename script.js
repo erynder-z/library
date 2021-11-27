@@ -70,6 +70,7 @@ function displayLibrary() {
         nBook.appendChild(nRead);
         if (this.red === true) {
             nRead.setAttribute("checked", "true");
+            nBook.classList.add("markRead");
         }
     }
     activateRemoveButton();
@@ -153,6 +154,7 @@ function readToggleListener() {
 
 //run prototype function on selected object
 function readStatusHelper(item) {
+    item.target.parentNode.classList.toggle("markRead");
     myLibrary[item.target.parentNode.id].toggleReadStatus();
     return myLibrary;
 }
