@@ -162,8 +162,6 @@ function readStatusHelper(item) {
     return myLibrary;
 }
 
-
-
 //saves libary to localstorage
 function populateStorage() {
     storageString = JSON.stringify(myLibrary);
@@ -242,5 +240,4 @@ function initialLibrary() {
 retrieveStorage();
 initialLibrary();
 
-// retrieved books with red=true show up as unread
 
