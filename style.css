@@ -204,6 +204,12 @@ footer {
     height: 5vh;
     text-align: center;
     padding-top: 5px;
+    color: white;
+}
+
+footer> a {
+    color: rgb(60, 255, 0);
+    text-decoration: none;
 }
 
 .hidden {
