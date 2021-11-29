@@ -178,10 +178,9 @@ function retrieveStorage() {
 
 //maps storageData and converts it in book-objects
 function mapData() {
-    const listOfBookInstances = storageData.map(data =>
+    myLibrary = storageData.map(data =>
         new Book(data.title, data.author, data.pages, data.red)
     );
-    myLibrary = listOfBookInstances
 }
 
 //displays book saved in localstorage
