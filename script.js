@@ -144,6 +144,7 @@ function removeBookHelper(item) {
 function removeBook(parentNodeID) {
     document.getElementById(parentNodeID).remove();
     myLibrary.splice(parentNodeID, 1);
+    populateStorage();
     return myLibrary;
 }
 
@@ -160,6 +161,8 @@ function readStatusHelper(item) {
     myLibrary[item.target.parentNode.id].toggleReadStatus();
     return myLibrary;
 }
+
+
 
 //saves libary to localstorage
 function populateStorage() {
@@ -236,6 +239,7 @@ function initialLibrary() {
     readToggleListener();
 }
 
+retrieveStorage();
 initialLibrary();
 
 // retrieved books with red=true show up as unread
