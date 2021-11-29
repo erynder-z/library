@@ -1,4 +1,6 @@
-const myLibrary = [];
+let myLibrary = [];
+let storageString;
+let storageData;
 
 let newTitle;
 let newAuthor;
@@ -11,7 +13,6 @@ function Book(title, author, pages, red) {
     this.author = author;
     this.pages = pages;
     this.red = red;
-}
 
 Book.prototype.toggleReadStatus = function () {
     if (this.red === true) {
@@ -19,6 +20,7 @@ Book.prototype.toggleReadStatus = function () {
         return this.red;
     }
     return this.red = true;
+}
 }
 
 //Displays Objects stored in libary.
@@ -56,7 +58,6 @@ function displayLibrary() {
         nPages.textContent = myLibrary[i].pages;
         mRead.textContent = "Finished";
         nRead.textContent = myLibrary[i].red;
-
         bookShelf.appendChild(nBook);
         nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i])); // use this ID to grab the object in the array and to operations on it
         nBook.appendChild(nClose);
@@ -90,6 +91,7 @@ function addBookToLibary() {
     myLibrary.push(newBook);
     displayLibrary();
     clearInput();
+    populateStorage();
 }
 
 //Clear input fields after input.
@@ -158,4 +160,83 @@ function readStatusHelper(item) {
     myLibrary[item.target.parentNode.id].toggleReadStatus();
     return myLibrary;
 }
+
+//saves libary to localstorage
+function populateStorage() {
+    storageString = JSON.stringify(myLibrary);
+    localStorage.setItem("localShelf", storageString);
+}
+
+//retrieves library from localstorage
+function retrieveStorage() {
+    let retrievedStorageString = localStorage.getItem("localShelf");
+    storageData = JSON.parse(retrievedStorageString);
+    mapData();
+}
+
+//maps storageData and converts it in book-objects
+function mapData() {
+    const listOfBookInstances = storageData.map(data =>
+        new Book(data.title, data.author, data.pages, data.red)
+    );
+    myLibrary = listOfBookInstances
+}
+
+//displays book saved in localstorage
+function initialLibrary() {
+    const bookShelf = document.getElementById("shelf");
+    for (let i = 0; i < myLibrary.length; i++) {
+        let nClose = document.createElement("div");
+        nClose.classList.add("close");
+        let nBook = document.createElement("div");
+        nBook.classList.add("book");
+        let mTitle = document.createElement("div");
+        mTitle.classList.add("titlehead");
+        let nTitle = document.createElement("div");
+        nTitle.classList.add("title");
+        let mAuthor = document.createElement("div");
+        mAuthor.classList.add("authorhead");
+        let nAuthor = document.createElement("div");
+        nAuthor.classList.add("author");
+        let mPages = document.createElement("div");
+        mPages.classList.add("pageshead");
+        let nPages = document.createElement("div");
+        nPages.classList.add("pages");
+        let mRead = document.createElement("div");
+        mRead.classList.add("readhead")
+        let nRead = document.createElement("input");
+        nRead.setAttribute("type", "checkbox");
+        nRead.classList.add("read");
+        nClose.textContent = "X";
+        mTitle.textContent = "Title:";
+        nTitle.textContent = myLibrary[i].title;
+        mAuthor.textContent = "Author:";
+        nAuthor.textContent = myLibrary[i].author;
+        mPages.textContent = "Pages:";
+        nPages.textContent = myLibrary[i].pages;
+        mRead.textContent = "Finished";
+        nRead.textContent = myLibrary[i].red;
+        bookShelf.appendChild(nBook);
+        nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i])); // use this ID to grab the object in the array and to operations on it
+        nBook.appendChild(nClose);
+        nBook.appendChild(mTitle);
+        nBook.appendChild(nTitle);
+        nBook.appendChild(mAuthor);
+        nBook.appendChild(nAuthor);
+        nBook.appendChild(mPages);
+        nBook.appendChild(nPages);
+        nBook.appendChild(mRead);
+        nBook.appendChild(nRead);
+        if (this.red === true) {
+            nRead.setAttribute("checked", "true");
+            nBook.classList.add("markRead");
+        }
+    }
+    activateRemoveButton();
+    readToggleListener();
+}
+
+initialLibrary();
+
+// retrieved books with red=true show up as unread
 
