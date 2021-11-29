@@ -202,6 +202,8 @@ padding: 20px 10px 0 10px;
 footer {
     background: rgb(0, 92, 92);
     height: 5vh;
+    text-align: center;
+    padding-top: 5px;
 }
 
 .hidden {
