@@ -229,7 +229,7 @@ function initialLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(mRead);
         nBook.appendChild(nRead);
-        if (this.red === true) {
+        if (myLibrary[i].red === true) {
             nRead.setAttribute("checked", "true");
             nBook.classList.add("markRead");
         }
