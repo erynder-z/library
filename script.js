@@ -159,6 +159,7 @@ function readToggleListener() {
 function readStatusHelper(item) {
     item.target.parentNode.classList.toggle("markRead");
     myLibrary[item.target.parentNode.id].toggleReadStatus();
+    populateStorage();
     return myLibrary;
 }
 
