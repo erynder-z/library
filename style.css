@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 *,
 *::before,
 *::after {
@@ -7,10 +9,11 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 header {
-    background: rgb(140, 175, 175);
+    background: #9DC4C4;
     padding: 10px 0;
 
 }
@@ -41,7 +44,7 @@ header>h1 {
 .inputContainer {
     display: flex;
     flex-direction: column;
-    background: teal;
+    background: #3C7878;
     min-height: 50vh;
     width: 60vw;
     justify-content: space-around;
@@ -73,12 +76,12 @@ header>h1 {
     width: 25px;
     height: 25px;
     margin-left: auto;
-    background: rgba(245, 245, 245, 0.164);
-    color: rgb(172, 3, 3);
+    color: crimson;
+    background-color: rgba(255, 255, 255, 0.568);
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .inputUpperContainer>input {
@@ -98,6 +101,7 @@ header>h1 {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+    padding-bottom: 20px;
 }
 
 .inputLowerContainer>button {
@@ -107,7 +111,16 @@ header>h1 {
     font-size: 26px;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+    border: solid 2px tomato;
+    background: tomato;
+    color: black;
 }
+
+@media (max-width: 50em) {
+    .inputLowerContainer>button {
+        width: 25vw;
+}}
 
 .checkboxContainer {
     display: flex;
@@ -127,7 +140,7 @@ header>h1 {
 #shelf {
     display: flex;
     flex-wrap: wrap;
-    background: teal;
+    background: #8cafaf;
     min-height: 71vh;
     width: 100%;
     padding: 20px;
@@ -163,12 +176,12 @@ header>h1 {
     width: 25px;
     height: 25px;
     margin-left: auto;
-    background: rgba(245, 245, 245, 0.164);
     color: rgb(172, 3, 3);
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .titlehead, .authorhead, .pageshead, .readhead {
