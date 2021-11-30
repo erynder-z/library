@@ -19,13 +19,20 @@ body {
     height: 25vh;
 }
 
+.heading-container {
+    display: flex;
+    width: 100%;
+}
+
 header {
     background: #9DC4C4;
 
 }
 
-header>h1 {
+.heading-container>h1 {
     text-align: center;
+    margin: auto;
+    padding-top: 15px;
 }
 
 #newBookButton {
@@ -239,3 +246,8 @@ footer> a {
 input[type="checkbox" i] {
     cursor: pointer;
 }
+
+.theme {
+    align-self: center;
+    margin-right: 10px;
+  }
