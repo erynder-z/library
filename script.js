@@ -1,6 +1,5 @@
 let myLibrary = [];
 let storageString;
-let storageData;
 
 let newTitle;
 let newAuthor;
@@ -257,8 +256,7 @@ function initialLibrary() {
     readToggleListener();
 }
 
+localStorage.setItem('localShelf', '[]')
 retrieveStorage();
 initialLibrary();
 themeSwitch();
-
-
