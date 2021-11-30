@@ -45,7 +45,14 @@ body {
     font-size: 50px;
     margin: 25px auto;
     cursor: pointer;
+    transition: all 0.5s;
 }
+
+#newBookButton:hover {
+    transition: all 0.5s;
+    transform:scale(1.1);
+  }
+  
 
 @media (max-width: 50em) {
     #newBookButton {
