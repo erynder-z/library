@@ -191,7 +191,7 @@ function populateStorage() {
 //retrieves library from localstorage
 function retrieveStorage() {
     let retrievedStorageString = localStorage.getItem("localShelf");
-    storageData = JSON.parse(retrievedStorageString);
+    storageData = JSON.parse(retrievedStorageString) || [];
     mapData();
 }
 
@@ -256,7 +256,8 @@ function initialLibrary() {
     readToggleListener();
 }
 
-localStorage.setItem('localShelf', '[]')
+
+/* localStorage.setItem('localShelf', '[]') */
 retrieveStorage();
 initialLibrary();
 themeSwitch();
