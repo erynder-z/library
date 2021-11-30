@@ -23,6 +23,18 @@ Book.prototype.toggleReadStatus = function () {
 }
 }
 
+//Theme functionalitty
+function themeSwitch() {
+    const flip = document.getElementById("theme-toggle");
+    const lightToggle = document.getElementById("lightSwitch");
+    const darkToggle = document.getElementById("darkSwitch");
+    flip.addEventListener("click", () => {
+        lightToggle.classList.toggle("dark");
+        darkToggle.classList.toggle("light");
+
+    });
+}
+
 //Displays Objects stored in libary.
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
@@ -239,5 +251,6 @@ function initialLibrary() {
 
 retrieveStorage();
 initialLibrary();
+themeSwitch();
 
 
