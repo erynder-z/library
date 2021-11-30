@@ -7,8 +7,6 @@ let newAuthor;
 let newPages;
 let newRead;
 
-let theme = "light";
-
 //Constructor function that makes "Book" objects.
 function Book(title, author, pages, red) {
     this.title = title;
