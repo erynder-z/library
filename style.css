@@ -24,7 +24,7 @@ body {
     width: 100%;
 }
 
-header {
+.myHeaderClass {
     background: #9DC4C4;
 
 }
@@ -57,7 +57,7 @@ header {
 .inputContainer {
     display: flex;
     flex-direction: column;
-    background: #3C7878;
+    background: #9DC4C4;
     min-height: 50vh;
     width: 60vw;
     justify-content: space-around;
@@ -65,10 +65,11 @@ header {
     margin: 0 auto;
     position: fixed;
     left: 50%;
-    top: 33%;
+    top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
     border: solid 2px black;
+    z-index: 1;
 }
 
 @media (max-width: 50em) {
@@ -107,7 +108,7 @@ header {
 .disclaimer {
     font-size: 18px;
     padding: 15px;
-    color:rgb(223, 223, 0);
+    color: crimson;
 }
 
 .inputLowerContainer {
@@ -124,7 +125,7 @@ header {
     font-size: 26px;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 5px;
     border: solid 2px tomato;
     background: tomato;
     color: black;
@@ -150,7 +151,7 @@ header {
     font-size: 20px;
 }
 
-#shelf {
+.shelf {
     display: flex;
     flex-wrap: wrap;
     background: #8cafaf;
@@ -162,7 +163,7 @@ header {
 }
 
 @media (max-width: 50em) {
-    #shelf {
+    .shelf {
         flex-direction: column;
         align-items: center;
         padding: 25px 0;
@@ -174,7 +175,7 @@ header {
     height: fit-content;
     min-height: 33vh;
     min-width: 20vw;
-    background: rgb(230, 216, 216);
+    background: #e6d8d8;
 }
 
 @media (max-width: 50em) {
@@ -217,7 +218,7 @@ padding: 20px 10px 0 10px;
     height: 25px;
 }
 
-footer {
+.myFooterClass {
     display: flex;
     background: rgb(0, 92, 92);
     height: 5vh;
@@ -226,7 +227,7 @@ footer {
     color: white;
 }
 
-footer> a {
+.myFooterClass> a {
     color: rgb(60, 255, 0);
     text-decoration: none;
 }
@@ -240,7 +241,7 @@ footer> a {
     background-repeat: no-repeat;
     background-position: bottom 1em right;
     background-size: 5em;
-    background-color: rgb(230, 216, 216);
+    background-color: #e6d8d8;
 }
 
 input[type="checkbox" i] {
@@ -251,7 +252,7 @@ input[type="checkbox" i] {
     align-self: center;
     margin-right: 10px;
   }
-  
+
 .defaultLight {
     width: 15px;
     height: 15px;
@@ -266,17 +267,6 @@ input[type="checkbox" i] {
     border: solid 2px black;
 }
 
-
-.light {
-    width: 15px;
-    height: 15px;
-    background: rgba(255, 255, 255, 0.507);
-    border: solid 2px white;
-}
-
-.dark {
-    width: 15px;
-    height: 15px;
-    background: rgba(0, 0, 0, 0.507);
-    border: solid 2px black;
+.darkmode {
+    filter: invert(100%) hue-rotate(240deg);
 }

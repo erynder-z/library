@@ -7,6 +7,8 @@ let newAuthor;
 let newPages;
 let newRead;
 
+let theme = "light";
+
 //Constructor function that makes "Book" objects.
 function Book(title, author, pages, red) {
     this.title = title;
@@ -23,16 +25,24 @@ Book.prototype.toggleReadStatus = function () {
 }
 }
 
-//Theme functionalitty
+//Create a switch do toggle theme
 function themeSwitch() {
-    const flip = document.getElementById("theme-toggle");
-    const lightToggle = document.getElementById("lightSwitch");
-    const darkToggle = document.getElementById("darkSwitch");
-    flip.addEventListener("click", () => {
-        lightToggle.classList.toggle("dark");
-        darkToggle.classList.toggle("light");
-
+    const flipSwitch = document.getElementById("theme-toggle");
+    flipSwitch.addEventListener("click", () => {
+        changeTheme();
     });
+}
+
+//Change theme
+function changeTheme() {
+    const topHeader = document.getElementById("myHeader");
+    const bookShelf = document.getElementById("shelf");
+    const bottomFooter = document.getElementById("myFooter");
+    const inputWindow = document.getElementById("inputFields");
+        topHeader.classList.toggle("darkmode");
+        bookShelf.classList.toggle("darkmode");
+        bottomFooter.classList.toggle("darkmode");
+        inputWindow.classList.toggle("darkmode");
 }
 
 //Displays Objects stored in libary.
