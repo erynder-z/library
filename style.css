@@ -251,3 +251,17 @@ input[type="checkbox" i] {
     align-self: center;
     margin-right: 10px;
   }
+
+  .light {
+      width: 15px;
+      height: 15px;
+      background: rgba(255, 255, 255, 0.507);
+      border: solid 2px white;
+  }
+
+  .dark {
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.507);
+    border: solid 2px black;
+}
