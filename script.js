@@ -1,10 +1,4 @@
 let myLibrary = [];
-let storageString;
-
-let newTitle;
-let newAuthor;
-let newPages;
-let newRead;
 
 //Constructor function that makes "Book" objects.
 function Book(title, author, pages, read) {
@@ -104,9 +98,9 @@ function displayLibrary() {
 //Get input field values and push them to myLibary-Array.
 function addBookToLibary() {
 
-    newTitle = document.getElementById("titleInput").value;
-    newAuthor = document.getElementById("authorInput").value;
-    newPages = document.getElementById("pagesInput").value;
+    let newTitle = document.getElementById("titleInput").value;
+    let newAuthor = document.getElementById("authorInput").value;
+    let newPages = document.getElementById("pagesInput").value;
     checkRead();
 
     let newBook = new Book(newTitle, newAuthor, newPages, read);
@@ -192,7 +186,7 @@ function readStatusHelper(item) {
 
 //Saves myLibrary contents as JSON to localstorage.
 function populateStorage() {
-    storageString = JSON.stringify(myLibrary);
+    let storageString = JSON.stringify(myLibrary);
     localStorage.setItem("localShelf", storageString);
 }
 
