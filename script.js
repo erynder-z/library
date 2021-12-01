@@ -7,18 +7,18 @@ let newPages;
 let newRead;
 
 //Constructor function that makes "Book" objects.
-function Book(title, author, pages, red) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.red = red;
+    this.read = read;
 
 Book.prototype.toggleReadStatus = function () {
-    if (this.red === true) {
-        this.red = false;
-        return this.red;
+    if (this.read === true) {
+        this.read = false;
+        return this.read;
     }
-    return this.red = true;
+    return this.read = true;
 }
 }
 
@@ -79,7 +79,7 @@ function displayLibrary() {
         mPages.textContent = "Pages:";
         nPages.textContent = myLibrary[i].pages;
         mRead.textContent = "Finished";
-        nRead.textContent = myLibrary[i].red;
+        nRead.textContent = myLibrary[i].read;
         //Create the above defined Elements on the Webpage for every loop.
         bookShelf.appendChild(nBook);
         nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i])); // use this ID to grab the object in the array and perform operations on it
@@ -92,7 +92,7 @@ function displayLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(mRead);
         nBook.appendChild(nRead);
-        if (this.red === true) {
+        if (this.read === true) {
             nRead.setAttribute("checked", "true");
             nBook.classList.add("markRead");
         }
@@ -109,7 +109,7 @@ function addBookToLibary() {
     newPages = document.getElementById("pagesInput").value;
     checkRead();
 
-    let newBook = new Book(newTitle, newAuthor, newPages, red);
+    let newBook = new Book(newTitle, newAuthor, newPages, read);
 
     myLibrary.push(newBook);
     displayLibrary();
@@ -127,12 +127,12 @@ function clearInput() {
     hideInputs();
 }
 
-//Check if entered book is already red or not.
+//Check if entered book is already read or not.
 function checkRead() {
     if (document.getElementById("readCheck").checked === true) {
-        return red = true;
+        return read = true;
     } else {
-        return red = false;
+        return read = false;
     }
 }
 
@@ -208,7 +208,7 @@ function retrieveStorage() {
 //Maps storageData-Array and converts the items in actuial Book-objects via the constructor-function.
 function mapData() {
     myLibrary = storageData.map(data =>
-        new Book(data.title, data.author, data.pages, data.red)
+        new Book(data.title, data.author, data.pages, data.read)
     );
 }
 
@@ -245,7 +245,7 @@ function initialLibrary() {
         mPages.textContent = "Pages:";
         nPages.textContent = myLibrary[i].pages;
         mRead.textContent = "Finished";
-        nRead.textContent = myLibrary[i].red;
+        nRead.textContent = myLibrary[i].read;
         bookShelf.appendChild(nBook);
         nBook.setAttribute("id", myLibrary.indexOf(myLibrary[i])); // use this ID to grab the object in the array and to operations on it
         nBook.appendChild(nClose);
@@ -257,7 +257,7 @@ function initialLibrary() {
         nBook.appendChild(nPages);
         nBook.appendChild(mRead);
         nBook.appendChild(nRead);
-        if (myLibrary[i].red === true) {
+        if (myLibrary[i].read === true) {
             nRead.setAttribute("checked", "true");
             nBook.classList.add("markRead");
         }
