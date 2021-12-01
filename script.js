@@ -42,7 +42,7 @@ function changeTheme() {
         inputWindow.classList.toggle("darkmode");
 }
 
-//Displays Objects stored in libary.
+//Displays Objects stored in library.
 function displayLibrary() {
     const bookShelf = document.getElementById("shelf");
     let nClose = document.createElement("div");
@@ -182,7 +182,7 @@ function readStatusHelper(item) {
     return myLibrary;
 }
 
-//saves libary to localstorage
+//saves library to localstorage
 function populateStorage() {
     storageString = JSON.stringify(myLibrary);
     localStorage.setItem("localShelf", storageString);
