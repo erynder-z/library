@@ -17,7 +17,7 @@ Book.prototype.toggleReadStatus = function () {
 }
 
 //Create a switch do toggle theme.
-function themeSwitch() {
+const themeSwitch = () => {
     const flipSwitch = document.getElementById("theme-toggle");
     flipSwitch.addEventListener("click", () => {
         changeTheme();
@@ -25,7 +25,7 @@ function themeSwitch() {
 }
 
 //Change theme  for Header, Body and Footer sections.
-function changeTheme() {
+const changeTheme = () => {
     const topHeader = document.getElementById("myHeader");
     const bookShelf = document.getElementById("shelf");
     const bottomFooter = document.getElementById("myFooter");
@@ -39,7 +39,7 @@ function changeTheme() {
 //Displays Book-Objects stored in myLibrary-Array.
     //Creates variables for div-elements that are used to create the actual Book-object items from the myLibrary-Array.
     //Adds classes to those created elements.
-function displayLibrary() {
+const displayLibrary = () => {
     const bookShelf = document.getElementById("shelf");
     let nClose = document.createElement("div");
     nClose.classList.add("close");
@@ -96,7 +96,7 @@ function displayLibrary() {
 }
 
 //Get input field values and push them to myLibary-Array.
-function addBookToLibary() {
+const addBookToLibary = () => {
 
     let newTitle = document.getElementById("titleInput").value;
     let newAuthor = document.getElementById("authorInput").value;
@@ -112,7 +112,7 @@ function addBookToLibary() {
 }
 
 //Clear input fields after input.
-function clearInput() {
+const clearInput = () => {
     document.getElementById("titleInput").value = "";
     document.getElementById("authorInput").value = "";
     document.getElementById("pagesInput").value = "";
@@ -122,7 +122,7 @@ function clearInput() {
 }
 
 //Check if entered book is already read or not.
-function checkRead() {
+const checkRead = () => {
     if (document.getElementById("readCheck").checked === true) {
         return read = true;
     } else {
@@ -137,31 +137,33 @@ getNewBookButton.addEventListener("click", () => {
 });
 
 //Show hidden input fields for a popup-like effect.
-function showInputs() {
+const showInputs = () => {
     document.getElementById("inputFields").classList.remove("hidden");
 }
 
+
 //Hide input fields ffor a popup-like effect.
-function hideInputs() {
-    document.getElementById("inputFields").classList.add("hidden");
+const hideInputs = () => {
+    document.getElementById("inputFields").classList.add("hidden"); 
 }
 
+
 //Add an eventListener for every< button with the .close-class.
-function activateRemoveButton() {
+const activateRemoveButton = () => {
     document.querySelectorAll(".close").forEach(button => {
         button.addEventListener("click", removeBookHelper)// ID of the corresponding Book object. Use this ID to target the corresponding object in the myLibrary-Array
         });
 }
 
 //Helper function that passes the ID of the clicked elements parent node (clicked elements is one of the close buttons, which is a child of its parent "book".)
-function removeBookHelper(item) {
+const removeBookHelper = (item) => {
     removeBook(item.target.parentNode.id);
 }
 
 //Remove a book from myLibrary Array.
 //Removes the element with the accorgind ID from the DOM.
 //Uses the ID from the removeBookHelper-functino to splice the myLibrary-array at the according position.
-function removeBook(parentNodeID) {
+const removeBook = (parentNodeID) => {
     document.getElementById(parentNodeID).remove();
     myLibrary.splice(parentNodeID, 1);
     populateStorage();
@@ -169,7 +171,7 @@ function removeBook(parentNodeID) {
 }
 
 //Attach eventListeners on all .read-checkboxes
-function readToggleListener() {
+const readToggleListener = () => {
     document.querySelectorAll(".read").forEach(checkbox => {
         checkbox.addEventListener("click", readStatusHelper)
     });
@@ -177,7 +179,7 @@ function readToggleListener() {
 
 //Toggles amd "markRead"-class on selected elements parent node.
 //Run prototype function toggleReadStatus on myLibrary-Array item with corresponding ID.
-function readStatusHelper(item) {
+const readStatusHelper = (item) => {
     item.target.parentNode.classList.toggle("markRead");
     myLibrary[item.target.parentNode.id].toggleReadStatus();
     populateStorage();
@@ -185,7 +187,7 @@ function readStatusHelper(item) {
 }
 
 //Saves myLibrary contents as JSON to localstorage.
-function populateStorage() {
+const populateStorage = () => {
     let storageString = JSON.stringify(myLibrary);
     localStorage.setItem("localShelf", storageString);
 }
@@ -193,21 +195,21 @@ function populateStorage() {
 //Retrieves JSON from localstorage and parses it into an array.
 //Creates an empty array, if localstorace is empty.
 // !!! Data parsed from localstorage gets parsed as an array with all the items of the Book-object but NOT AS AN ACTUAL BOOK-objects as created per constructor function! 
-function retrieveStorage() {
+const retrieveStorage = () => {
     let retrievedStorageString = localStorage.getItem("localShelf");
     storageData = JSON.parse(retrievedStorageString) || [];
     mapData();
 }
 
 //Maps storageData-Array and converts the items in actuial Book-objects via the constructor-function.
-function mapData() {
+const mapData = () => {
     myLibrary = storageData.map(data =>
         new Book(data.title, data.author, data.pages, data.read)
     );
 }
 
 //Displays all Books in myLibrary upon start.
-function initialLibrary() {
+const initialLibrary = () => {
     const bookShelf = document.getElementById("shelf");
     for (let i = 0; i < myLibrary.length; i++) {
         let nClose = document.createElement("div");
