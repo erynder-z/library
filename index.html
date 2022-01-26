@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
     <script src="script.js" defer></script>
     <title>Library</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div id="myHeader" class="myHeaderClass">
-            <div class="header-wrapper">
-                <div class="heading-container">
-                    <h1>My Book Library</h1>
-                    <div id="theme-toggle" class="theme">
-                        <div id="lightSwitch" class="defaultLight"></div>
-                        <div id="darkSwitch" class="defaultDark"></div>
-                    </div>
-                </div>
-                <div id="newBookButton">+</div>
+      <div id="myHeader" class="myHeaderClass">
+        <div class="header-wrapper">
+          <div class="heading-container">
+            <h1>My Book Library</h1>
+            <div id="theme-toggle" class="theme">
+              <div id="lightSwitch" class="defaultLight"></div>
+              <div id="darkSwitch" class="defaultDark"></div>
             </div>
+          </div>
+          <div id="newBookButton">+</div>
         </div>
+      </div>
     </header>
     <div id="inputFields" class="inputContainer hidden">
-        <div class="inputUpperContainer">
-            <div class="closeBtn" onclick="clearInput()">X</div>
-            <h2>Add a new book</h2>
-            <input type="text" id="titleInput" placeholder="Title">
-            <input type="text" id="authorInput" placeholder="Author">
-            <input type="text" id="pagesInput" placeholder="Pages">
+      <div class="inputUpperContainer">
+        <div class="closeBtn" onclick="clearInput()">X</div>
+        <h2>Add a new book</h2>
+        <input type="text" id="titleInput" placeholder="title" />
+        <input type="text" id="authorInput" placeholder="author" />
+        <input type="text" id="pagesInput" placeholder="pages" />
+      </div>
+      <div class="disclaimer">
+        This application uses localstorage to store your library data. This data
+        is lost when you clear your browser cache!
+      </div>
+      <div class="inputLowerContainer">
+        <div class="checkboxContainer">
+          <input type="checkbox" id="readCheck" name="read" unchecked />
+          <label id="readCheckLabel" for="read">finished?</label>
         </div>
-        <div class="disclaimer">This application uses localstorage to store your library data. This data is lost when you
-            clear your browser cache!</div>
-        <div class="inputLowerContainer">
-            <div class="checkboxContainer">
-                <input type="checkbox" id="readCheck" name="read" unchecked>
-                <label id="readCheckLabel" for="read">finished?</label>
-            </div>
-            <button onclick="addBookToLibary()" class="addBtn">Add</button>
-        </div>
+        <button id="addBtn" class="addBtn">Add</button>
+      </div>
     </div>
     <div id="shelf" class="shelf"></div>
     <footer>
-        <div id="myFooter" class="myFooterClass">
-            Copyright © Erynder-Z 2021 ||<a href="https://github.com/erynder-z" target="_blank">&nbspMy GitHub</a>
-        </div>
+      <div id="myFooter" class="myFooterClass">
+        Copyright © Erynder-Z 2021 ||<a
+          href="https://github.com/erynder-z"
+          target="_blank"
+          >&nbspMy GitHub</a
+        >
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

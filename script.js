@@ -32,6 +32,13 @@ Book.prototype.toggleReadStatus = function () {
 }
 } */
 
+const addButton = (() => {
+  const button = document.getElementById('addBtn');
+  button.addEventListener('click', function () {
+    checkForm();
+  });
+})();
+
 //Create a switch do toggle theme.
 const themeSwitch = () => {
   const flipSwitch = document.getElementById('theme-toggle');
@@ -273,6 +280,21 @@ const initialLibrary = () => {
   }
   activateRemoveButton();
   readToggleListener();
+};
+
+//prevent submitting empty fields
+const checkForm = () => {
+  const title = document.getElementById('titleInput');
+  const author = document.getElementById('authorInput');
+  const pages = document.getElementById('pagesInput');
+
+  title.value === ''
+    ? alert('Enter a title')
+    : author.value === ''
+    ? alert('Enter an author')
+    : pages.value === ''
+    ? alert('Enter pages')
+    : addBookToLibary();
 };
 
 //On page load: retrieve data stored in localstorage > display all items in myLibrary > activate theme-switch functionality.

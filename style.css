@@ -3,285 +3,289 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Quicksand', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .header-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25vh;
 }
 
 .heading-container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .myHeaderClass {
-    background: #9DC4C4;
-
+  background: #9dc4c4;
 }
 
-.heading-container>h1 {
-    text-align: center;
-    margin: auto;
-    padding-top: 15px;
+.heading-container > h1 {
+  text-align: center;
+  margin: auto;
+  padding-top: 15px;
 }
 
 #newBookButton {
-    background: tomato;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    margin: 25px auto;
-    cursor: pointer;
-    transition: all 0.5s;
+  background: tomato;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  margin: 25px auto;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 
 #newBookButton:hover {
-    transition: all 0.5s;
-    transform:scale(1.1);
-  }
-  
+  transition: all 0.5s;
+  transform: scale(1.1);
+}
 
 @media (max-width: 50em) {
-    #newBookButton {
-        width: 60px;
-        height: 60px;
-    }
+  #newBookButton {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .inputContainer {
-    display: flex;
-    flex-direction: column;
-    background: #9DC4C4;
-    min-height: 50vh;
-    width: 60vw;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    border: solid 2px black;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background: #9dc4c4;
+  min-height: 50vh;
+  width: 60vw;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: solid 2px black;
+  z-index: 1;
 }
 
 @media (max-width: 50em) {
-    .inputContainer {
-        width: 95vw;
-        min-height: 60vh;
-    }
+  .inputContainer {
+    width: 95vw;
+    min-height: 60vh;
+  }
 }
 
 .inputUpperContainer {
-    display: flex;
-    width: 95%;
-    flex-direction: column;
+  display: flex;
+  width: 95%;
+  flex-direction: column;
 }
 
 .closeBtn {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    margin-left: auto;
-    color: crimson;
-    background-color: rgba(255, 255, 255, 0.568);
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 900;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  color: crimson;
+  background-color: rgba(255, 255, 255, 0.568);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 900;
 }
 
 @media (max-width: 50em) {
-    .closeBtn {
-        margin-top: 5px;
-    }
+  .closeBtn {
+    margin-top: 5px;
+  }
 }
 
-
-.inputUpperContainer>input {
-    width: 100%;
-    height: 5vh;
-    margin: 10px 0;
-    display: flex;
+.inputUpperContainer > input {
+  width: 100%;
+  height: 5vh;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .disclaimer {
-    font-size: 18px;
-    padding: 15px;
-    color: crimson;
+  font-size: 18px;
+  padding: 15px;
+  color: crimson;
 }
 
 .inputLowerContainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    padding-bottom: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
-.inputLowerContainer>button {
-    width: 15vw;
-    height: 5vh;
-    display: flex;
-    font-size: 26px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: solid 2px tomato;
-    background: tomato;
-    color: black;
+.inputLowerContainer > button {
+  width: 15vw;
+  height: 5vh;
+  display: flex;
+  font-size: 26px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: solid 2px tomato;
+  background: tomato;
+  color: black;
 }
 
 @media (max-width: 50em) {
-    .inputLowerContainer>button {
-        width: 25vw;
-        font-size: 20px;
-}}
+  .inputLowerContainer > button {
+    width: 25vw;
+    font-size: 20px;
+  }
+}
 
 .checkboxContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #readCheck {
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
 }
 
 #readCheckLabel {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .shelf {
-    display: flex;
-    flex-wrap: wrap;
-    background: #8cafaf;
-    min-height: 70vh;
-    width: 100%;
-    padding: 20px;
-    justify-content: center;
-    gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #8cafaf;
+  min-height: 70vh;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  gap: 50px;
 }
 
 @media (max-width: 50em) {
-    .shelf {
-        flex-direction: column;
-        align-items: center;
-        padding: 25px 0;
-    }
+  .shelf {
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+  }
 }
 
 .book {
-    border: solid 2px black;
-    height: fit-content;
-    min-height: 33vh;
-    min-width: 20vw;
-    background: #e6d8d8;
+  border: solid 2px black;
+  height: fit-content;
+  min-height: 33vh;
+  min-width: 20vw;
+  background: #e6d8d8;
 }
 
 @media (max-width: 50em) {
-    .book {
-        width: 80vw;
-        min-height: 50vh;
-    }
+  .book {
+    width: 80vw;
+    min-height: 50vh;
+  }
 }
 
 .close {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    margin-left: auto;
-    color: rgb(172, 3, 3);
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 900;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  color: rgb(172, 3, 3);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
 }
 
-.titlehead, .authorhead, .pageshead, .readhead {
-font-size: 18px;
-font-weight: bold;
-padding: 20px 10px 0 10px;
+.titlehead,
+.authorhead,
+.pageshead,
+.readhead {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 10px 0 10px;
 }
 
-.title, .author, .pages {
-    font-size: 24px;
-    padding: 0 10px;
-    }
+.title,
+.author,
+.pages {
+  font-size: 24px;
+  padding: 0 10px;
+}
 
 .read {
-   margin: 0 20px 40px 10px;
+  margin: 0 20px 40px 10px;
 }
 
-.book>input[type="checkbox"i] {
-    width: 25px;
-    height: 25px;
+.book > input[type='checkbox'i] {
+  width: 25px;
+  height: 25px;
 }
 
 .myFooterClass {
-    display: flex;
-    background: rgb(0, 92, 92);
-    height: 5vh;
-    justify-content: center;
-    padding-top: 5px;
-    color: white;
+  display: flex;
+  background: rgb(0, 92, 92);
+  height: 5vh;
+  justify-content: center;
+  padding-top: 5px;
+  color: white;
 }
 
-.myFooterClass> a {
-    color: rgb(60, 255, 0);
-    text-decoration: none;
+.myFooterClass > a {
+  color: rgb(60, 255, 0);
+  text-decoration: none;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .markRead {
-    background:url("finished.png");
-    background-repeat: no-repeat;
-    background-position: bottom 1em right;
-    background-size: 5em;
-    background-color: #e6d8d8;
+  background: url('finished.png');
+  background-repeat: no-repeat;
+  background-position: bottom 1em right;
+  background-size: 5em;
+  background-color: #e6d8d8;
 }
 
-input[type="checkbox" i] {
-    cursor: pointer;
+input[type='checkbox' i] {
+  cursor: pointer;
 }
 
 .theme {
-    align-self: center;
-    margin-right: 10px;
-  }
+  align-self: center;
+  margin-right: 10px;
+}
 
 .defaultLight {
-    width: 15px;
-    height: 15px;
-    background: rgba(255, 255, 255, 0.507);
-    border: solid 2px white;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.507);
+  border: solid 2px white;
 }
 
 .defaultDark {
-    width: 15px;
-    height: 15px;
-    background: rgba(0, 0, 0, 0.507);
-    border: solid 2px black;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.507);
+  border: solid 2px black;
 }
 
 .darkmode {
-    filter: invert(100%) hue-rotate(240deg);
+  filter: invert(100%) hue-rotate(240deg);
 }
